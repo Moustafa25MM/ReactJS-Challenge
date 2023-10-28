@@ -1,0 +1,141 @@
+$primary-color: #333;
+$secondary-color: #f9f9f9;
+
+.container {
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: $secondary-color;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  padding: 20px;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+.title,
+.subtitle {
+  color: $primary-color;
+  text-align: center;
+
+  &.title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  &.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &.title {
+      font-size: 2em;
+    }
+
+    &.subtitle {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.table {
+  margin: 20px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  th {
+    padding: 10px;
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+
+  td {
+    padding: 10px;
+    color: $primary-color;
+  }
+
+  @media screen and (max-width: 768px) {
+    th, td {
+      padding: 5px;
+    }
+  }
+}
+
+.loadMore {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 20%);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 5px 10px;
+  }
+}
+$modal-background: #f3f3f3;
+$modal-input-background: #fff;
+$modal-input-border: #ccc;
+
+.editModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  justify-items: end;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  z-index: 1000; /* high z-index to ensure it's above all other content */
+  transition: all 0.3s ease-in-out; /* animate the appearance of the modal */
+
+  .editModalContent {
+    width: 30%; /* adjust as needed */
+    max-height: 90vh; /* adjust as needed */
+    overflow-y: auto; /* add scroll if content exceeds modal's height */
+    padding: 30px;
+    background-color: $modal-background;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    .editModalInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: $modal-input-background;
+      border: 1px solid $modal-input-border;
+      border-radius: 5px;
+      &:focus {
+        outline: none;
+        border-color: darken($modal-input-border, 20%);
+      }
+    }
+  }
+}
+.editModalLabel {
+  color: #000;
+  font-weight: normal;
+  width: 100%;
+}
+
+
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+}
